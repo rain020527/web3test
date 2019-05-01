@@ -1,16 +1,108 @@
-<html>
-  <body>
-    <h2>Web3 API version</h2>
-    <p id="p1"></p>
-    <h2>My Account</h2>
-    <p id="account"></p>
-    <script src="web3_bundle.js"></script>
-    <script>
-      // Get API version
-      var p1 = document.getElementById("p1");
-      p1.innerText = '1';
-      // Get my MetaMask account
-      var account = document.getElementById("account");
-      account.innerHTML = web3.eth.accounts;
-  </body>
-</html>
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	    <link rel="stylesheet" type="text/css" href="main.css">
+	    <!-- <script src="./node_modules/web3/dist/web3.min.js"></script> -->
+	
+	</head>
+	<body>
+	    <div class="container">
+                
+        <marquee scrollamount="13" behavior="alternate"><b><font face="Arial" color="#cc33ff" size="7">Multiplication test</font></b></marquee>
+	        <h2 id="instructor"></h2>
+            <hr size="5" align="center" noshade width="100%" color="0000ff">
+	        <label for="name" class="col-lg-2 control-label">Input1</label>
+            <input id="num1" type="text">
+            
+	        <label for="name" class="col-lg-2 control-label">Input2</label>
+	        <input id="num2" type="text">
+	
+	        <button id="button">multiplication</button>
+            <img src="pika.jpg" width="200" height="200">
+	    </div>
+	
+	    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	
+	    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	    <!-- <script src="js/bootstrap.min.js"></script> -->
+        <!-- <script src="web3.min.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+	    <!-- <script src="js/truffle-contract.js"></script> -->
+	    <!-- <script src="js/app.js"></script> -->
+	
+	    <script>       
+	       if (typeof web3 !== 'undefined') {
+	            web3 = new Web3(web3.currentProvider);
+	        }
+	
+	        // Previous if/else statement removed for brevity
+	        web3.eth.defaultAccount = web3.eth.accounts[0];
+	        var CoursetroContract = web3.eth.contract([
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "x",
+				"type": "uint256"
+			},
+			{
+				"name": "y",
+				"type": "uint256"
+			}
+		],
+		"name": "set",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "result",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]);
+	        var Coursetro = CoursetroContract.at('0x5611a85ec017555091dc0c8427fffb6e09b9fa2b');
+	        console.log(Coursetro);
+	
+	        Coursetro.result(function(error, result){
+	            if(!error)
+	                {
+	                    $("#instructor").html("result = "+ result);
+	                    console.log(result);
+	                }
+	            else
+	                console.error(error);
+	        });
+	
+	        $("#button").click(function() {	            
+				
+				Coursetro.set($("#num1").val(), $("#num2").val(), function(error, result){})
+					
+                Coursetro.result(function(error, result){
+	                if(!error){
+	                   	$("#instructor").html("result = "+ result); 
+	                    console.log(result);
+	                }
+	                else console.error(error);
+				})
+				
+	        })
+	
+	    </script>
+	
+	</body>
+	</html>
