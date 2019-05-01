@@ -89,7 +89,7 @@
 	        });
 	
 	        $("#button").click(function() {	            
-				
+				console.log(web3.eth.accounts);
 				Coursetro.set($("#num1").val(), $("#num2").val(), function(error, result){})
 					
                 Coursetro.result(function(error, result){
