@@ -14,13 +14,22 @@
         <marquee scrollamount="13" behavior="alternate"><b><font face="Arial" color="#cc33ff" size="7">Multiplication test</font></b></marquee>
 	        <h2 id="instructor"></h2>
             <hr size="5" align="center" noshade width="100%" color="0000ff">
-	        <label for="name" class="col-lg-2 control-label">Input1</label>
+	        <label for="name" class="col-lg-2 control-label">delegate input</label>
             <input id="num1" type="text">
             
-	        <label for="name" class="col-lg-2 control-label">Input2</label>
+	        <label for="name" class="col-lg-2 control-label">giveright input</label>
 	        <input id="num2" type="text">
+
+			<label for="name" class="col-lg-2 control-label">vote input</label>
+	        <input id="num3" type="text">
 	
-	        <button id="button">multiplication</button>
+	        <button id="button1">delegate</button>
+			<button id="button2">giveright</button>
+			<button id="button3">vote</button>
+			<button id="button4">chairperson</button>
+			<button id="button5">proposals</button>
+			<button id="button6">voters</button>
+			<button id="button7">winnerName</button>
             <img src="pika.jpg" width="200" height="200">
 	    </div>
 	
@@ -46,15 +55,11 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "x",
-				"type": "uint256"
-			},
-			{
-				"name": "y",
+				"name": "proposal",
 				"type": "uint256"
 			}
 		],
-		"name": "set",
+		"name": "vote",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
@@ -62,23 +67,131 @@
 	},
 	{
 		"constant": true,
-		"inputs": [],
-		"name": "result",
-		"outputs": [
+		"inputs": [
 			{
 				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "proposals",
+		"outputs": [
+			{
+				"name": "name",
+				"type": "bytes32"
+			},
+			{
+				"name": "voteCount",
 				"type": "uint256"
 			}
 		],
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "chairperson",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "to",
+				"type": "address"
+			}
+		],
+		"name": "delegate",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "voter",
+				"type": "address"
+			}
+		],
+		"name": "giveRightToVote",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "voters",
+		"outputs": [
+			{
+				"name": "weight",
+				"type": "uint256"
+			},
+			{
+				"name": "voted",
+				"type": "bool"
+			},
+			{
+				"name": "delegate",
+				"type": "address"
+			},
+			{
+				"name": "vote",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "winnerName",
+		"outputs": [
+			{
+				"name": "winnerName_",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"name": "proposalNames",
+				"type": "bytes32[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
 	}
+
 ]);
-	        var Coursetro = CoursetroContract.at('0x5611a85ec017555091dc0c8427fffb6e09b9fa2b');
+	        var Coursetro = CoursetroContract.at('0x8c1ed7e19abaa9f23c476da86dc1577f1ef401f5');
 	        console.log(Coursetro);
 	
-	        Coursetro.result(function(error, result){
+/*	        Coursetro.result(function(error, result){
 	            if(!error)
 	                {
 	                    $("#instructor").html("result = "+ result);
@@ -100,6 +213,22 @@
 	                else console.error(error);
 				})
 				
+			})*/
+			$("#button1").click(function() {	            
+				console.log(web3.eth.accounts);
+				Coursetro.delegate($("#num1").val(), function(error, result){})				
+			})
+			$("#button2").click(function() {	            
+				console.log(web3.eth.accounts);
+				Coursetro.giveRightToVote($("#num2").val(), function(error, result){})				
+			})
+			$("#button3").click(function() {	            
+				console.log(web3.eth.accounts);
+				Coursetro.vote($("#num3").val(), function(error, result){})				
+			})
+			$("#button4").click(function() {	            
+				console.log(web3.eth.accounts);
+				$("#instructor").html(Coursetro.chairperson);			
 	        })
 	
 	    </script>
