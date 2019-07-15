@@ -227,7 +227,7 @@
 				Coursetro.vote($("#num3").val(), function(error, result){})				
 			})
 			$("#button4").click(function() {	            
-				console.log(web3.eth.accounts);
+				console.log(Coursetro.chairperson(function(error, result){}));
 				$("#instructor").html(Coursetro.chairperson(function(error, result){}));			
 	        })
 	
