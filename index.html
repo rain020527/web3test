@@ -228,7 +228,7 @@
 			})
 			$("#button4").click(function() {	            
 				console.log(web3.eth.accounts);
-				$("#instructor").html(Coursetro.chairperson);			
+				$("#instructor").html(Coursetro.chairperson(function(error, result){}));			
 	        })
 	
 	    </script>
