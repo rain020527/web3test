@@ -258,7 +258,7 @@
 							
 			})
 			$("#button6").click(function() {	            
-				Coursetro.voters(function(error, result){
+				Coursetro.voters($("#num5").val(), function(error, result){
 					if(!error){ 
 						console.log(result);
 						document.getElementById('voters output').value = result;
@@ -269,7 +269,7 @@
 			})
 
 			$("#button7").click(function() {	            
-				Coursetro.winnerName($("#num5").val(), function(error, result){
+				Coursetro.winnerName(function(error, result){
 					if(!error){ 
 						console.log(result);
 						document.getElementById('winnerName output').value = result;
