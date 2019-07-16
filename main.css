@@ -8,13 +8,12 @@
     	    margin: 0 auto;
     	}
     	label {
-            position: relative;
             top: 20px;
     	    display:block;
     	    margin-bottom:30px;
     	}
     	input {
-            width: 300px;
+            width: 400px;
             background-color: rgb(255, 255, 255);
     	    padding:5px;
     	    margin-bottom: 1em;
@@ -26,8 +25,6 @@
 		margin-bottom: 1em;
 	}
     	button {
-            position: relative;
-            display:block;
             background-color:rgb(218, 182, 188);
     	}
 
