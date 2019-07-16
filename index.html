@@ -32,15 +32,15 @@
 			<label for="name" class="col-lg-2 control-label">proposals input(uint)</label>
 	        <input id="num4" type="text">
 			<button id="button5">proposals</button>
-			<h2 id="proposals output"></h2>
+			<output id="proposals output"></output>
 
 			<label for="name" class="col-lg-2 control-label">voters input(address)</label>
 	        <input id="num5" type="text">
 			<button id="button6">voters</button>
-			<h2 id="voters output"></h2>
+			<output id="voters output"></output>
 
 			<button id="button7">winnerName</button>
-			<h2 id="winnerName output"></h2>
+			<output id="winnerName output"></output>
 
             <img src="pika.jpg" width="200" height="200">
 	    </div>
@@ -251,7 +251,7 @@
 				Coursetro.proposals($("#num4").val(), function(error, result){
 					if(!error){ 
 						console.log(result);
-						$("#proposals output").html(result);
+						document.getElementById('proposals output').value = result;
 	                }
 	                else console.error(error);
 				});
@@ -261,7 +261,7 @@
 				Coursetro.voters(function(error, result){
 					if(!error){ 
 						console.log(result);
-						$("#voters output").html(result);
+						document.getElementById('voters output').value = result;
 	                }
 	                else console.error(error);
 				});
@@ -272,7 +272,7 @@
 				Coursetro.winnerName($("#num5").val(), function(error, result){
 					if(!error){ 
 						console.log(result);
-						$("#winnerName output").html(result);
+						document.getElementById('winnerName output').value = result;
 	                }
 	                else console.error(error);
 				});
