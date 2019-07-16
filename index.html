@@ -257,7 +257,9 @@
 				});
 							
 			})
-			$("#button6").click(function() {	            
+			$("#button6").click(function() {
+				console.log(document.getElementById('num5').value);
+				console.log($("#num5").val());            
 				Coursetro.voters($("#num5").val(), function(error, result){
 					if(!error){ 
 						console.log(result);
