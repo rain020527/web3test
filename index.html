@@ -11,25 +11,37 @@
 	<body>
 	    <div class="container">
                 
-        <marquee scrollamount="13" behavior="alternate"><b><font face="Arial" color="#cc33ff" size="7">Multiplication test!!!!</font></b></marquee>
-	        <h2 id="instructor"></h2>
+        <marquee scrollamount="13" behavior="alternate"><b><font face="Arial" color="#cc33ff" size="7">VOTE!!</font></b></marquee>
             <hr size="5" align="center" noshade width="100%" color="0000ff">
-	        <label for="name" class="col-lg-2 control-label">delegate input</label>
-            <input id="num1" type="text">
-            
-	        <label for="name" class="col-lg-2 control-label">giveright input</label>
-	        <input id="num2" type="text">
 
-			<label for="name" class="col-lg-2 control-label">vote input</label>
-	        <input id="num3" type="text">
-	
-	        <button id="button1">delegate</button>
+	        <label for="name" class="col-lg-2 control-label">delegate input(address)</label>
+            <input id="num1" type="text">
+			<button id="button1">delegate</button>
+            
+	        <label for="name" class="col-lg-2 control-label">giveright input(address)</label>
+	        <input id="num2" type="text">
 			<button id="button2">giveright</button>
+
+			<label for="name" class="col-lg-2 control-label">vote input(uint)</label>
+	        <input id="num3" type="text">
 			<button id="button3">vote</button>
+			
 			<button id="button4">chairperson</button>
+			<h2 id="chairperson output"></h2>
+
+			<label for="name" class="col-lg-2 control-label">proposals input(uint)</label>
+	        <input id="num4" type="text">
 			<button id="button5">proposals</button>
+			<h2 id="proposals output"></h2>
+
+			<label for="name" class="col-lg-2 control-label">voters input(address)</label>
+	        <input id="num5" type="text">
 			<button id="button6">voters</button>
+			<h2 id="voters output"></h2>
+
 			<button id="button7">winnerName</button>
+			<h2 id="winnerName output"></h2>
+
             <img src="pika.jpg" width="200" height="200">
 	    </div>
 	
@@ -75,25 +87,6 @@
 		],
 		"name": "giveRightToVote",
 		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "x",
-				"type": "address"
-			}
-		],
-		"name": "toString",
-		"outputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -206,7 +199,7 @@
 		"type": "function"
 	}
 ]);
-	        var Coursetro = CoursetroContract.at('0x1d700b12874c452bbb77b9dede3daacefe91187c');
+	        var Coursetro = CoursetroContract.at('0xc139b00014a33b3af066b4818a372d4297866064');
 	        console.log(Coursetro);
 	
 /*	        Coursetro.result(function(error, result){
@@ -248,16 +241,17 @@
 				Coursetro.chairperson(function(error, result){
 					if(!error){ 
 						console.log(result);
-						$("#instructor").html("result = " + result);
+						$("#chairperson output").html(result);
 	                }
 	                else console.error(error);
 				});
 							
 			})
 			$("#button5").click(function() {	            
-				Coursetro.proposal($("#num4").val(), function(error, result){
+				Coursetro.proposals($("#num4").val(), function(error, result){
 					if(!error){ 
 						console.log(result);
+						$("#proposals output").html(result);
 	                }
 	                else console.error(error);
 				});
@@ -267,6 +261,7 @@
 				Coursetro.voters(function(error, result){
 					if(!error){ 
 						console.log(result);
+						$("#voters output").html(result);
 	                }
 	                else console.error(error);
 				});
@@ -277,6 +272,7 @@
 				Coursetro.winnerName($("#num5").val(), function(error, result){
 					if(!error){ 
 						console.log(result);
+						$("#winnerName output").html(result);
 	                }
 	                else console.error(error);
 				});
