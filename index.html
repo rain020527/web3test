@@ -241,7 +241,7 @@
 				Coursetro.chairperson(function(error, result){
 					if(!error){ 
 						console.log(result);
-						$("#chairperson output").html(result);
+						document.getElementById('chairperson output').value = result;
 	                }
 	                else console.error(error);
 				});
