@@ -25,7 +25,8 @@
 		margin-bottom: 1em;
 	}
     	button {
-            background-color:rgb(218, 182, 188);
+		display:block;
+        	background-color:rgb(218, 182, 188);
     	}
 
     
