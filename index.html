@@ -259,7 +259,10 @@
 			})
 			$("#button6").click(function() {
 				console.log(document.getElementById('num5').value);
-				console.log($("#num5").val());            
+				console.log($("#num5").val());
+				if(document.getElementById('num5').value==null){
+					console.log("666");
+				}            
 				Coursetro.voters($("#num5").val(), function(error, result){
 					if(!error){ 
 						console.log(result);
