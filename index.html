@@ -247,16 +247,41 @@
 			$("#button4").click(function() {	            
 				Coursetro.chairperson(function(error, result){
 					if(!error){ 
-	                    console.log(result);
+						console.log(result);
+						$("#instructor").html("result = " + result);
 	                }
 	                else console.error(error);
 				});
-				$("#instructor").html(Coursetro.chairperson(function(error, result){}));			
+							
 			})
+			$("#button5").click(function() {	            
+				Coursetro.proposal($("#num4").val(), function(error, result){
+					if(!error){ 
+						console.log(result);
+	                }
+	                else console.error(error);
+				});
+							
+			})
+			$("#button6").click(function() {	            
+				Coursetro.voters(function(error, result){
+					if(!error){ 
+						console.log(result);
+	                }
+	                else console.error(error);
+				});
+							
+			})
+
 			$("#button7").click(function() {	            
-				console.log(Coursetro.winnerName(function(error, result){}));
-				$("#instructor").html(100);			
-	        })
+				Coursetro.winnerName($("#num5").val(), function(error, result){
+					if(!error){ 
+						console.log(result);
+	                }
+	                else console.error(error);
+				});
+							
+			})
 	
 	    </script>
 	
