@@ -1,5 +1,5 @@
 	body {
-    	    background-color:rgb(128, 223, 140);
+    	    background-color:rgb(24, 252, 233);
     	    padding: 2em;
     	    font-family: 'Raleway','Source Sans Pro', 'Arial';
     	}
@@ -20,7 +20,7 @@
 	}
 	output {
 		width: 300px;
-		background-color: rgb(255, 255, 255);
+		background-color: rgb(39, 35, 223);
 		padding:5px;
 		margin-bottom: 1em;
 	}
