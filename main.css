@@ -63,7 +63,8 @@
 		border-bottom: 20px solid #187dbc;
 		border-left: 16px solid transparent;
 		border-right: 20px solid #187dbc;
-		position: relative;
+		position: absolute;
+		left: 0;
 		opacity: 0.6; 
 		border-radius: 0 5px 5px 0;  
 	}
