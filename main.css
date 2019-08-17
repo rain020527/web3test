@@ -14,11 +14,17 @@
     	    display:block;
     	    margin-bottom:30px;
     	}
-    	input {
-            width: 300px;
-            background-color: rgb(255, 255, 255);
-    	    padding:5px;
-    	    margin-bottom: 1em;
+    	
+	input {
+		width:250px;
+		border-radius:42px;
+		border:2px solid #324B4E;
+		background:#F9F0DA;
+		transition:.3s linear;
+		float:right;
+	}
+	input:focus {
+		width:300px;
 	}
 	output {
 		width: 300px;
