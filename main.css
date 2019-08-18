@@ -11,7 +11,7 @@
             position: relative;
             top: 20px;
     	    display:block;
-    	    margin-bottom:30px;
+    	    margin: auto
     	}
     	
 	input {
@@ -21,6 +21,7 @@
 		background:#F9F0DA;
 		transition:.3s linear;
 		float:right;
+		margin: auto;
 	}
 	input:focus {
 		width:300px;
@@ -29,7 +30,8 @@
 		width: 300px;
 		background-color: rgb(255, 255, 255);
 		padding:5px;
-		margin-bottom: 1em;
+		
+		margin: auto;
 	}
 	button {
 		width: 130px;
