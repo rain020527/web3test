@@ -80,3 +80,9 @@
 		top: 0;
 		border-radius: 0 5px 5px 0;
 	}
+
+	.word {
+		font-size: 40px;
+		-webkit-text-stroke: 1px red;
+		-webkit-text-fill-color: transparent;
+	}
