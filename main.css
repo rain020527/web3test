@@ -81,7 +81,7 @@
 		border-radius: 0 5px 5px 0;
 	}
 
-	.word {
+	#word {
 		font-size: 40px;
 		-webkit-text-stroke: 1px red;
 		-webkit-text-fill-color: transparent;
