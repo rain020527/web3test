@@ -74,7 +74,7 @@
 		border-bottom: 20px solid #187dbc;
 		border-left: 16px solid transparent;
 		border-right: 20px solid #187dbc;
-		position: relative;
+		position: absolute;
 		opacity: 0.6;
 		right: 0;
 		top: 0;
