@@ -44,7 +44,7 @@
 		/* W3C */
 		border: none;
 		border-radius: 5px;
-		position: relative;
+		position: absolute;
 		border-bottom: 4px solid #2b8bc6;
 		color: #fbfbfb;
 		font-weight: 600;
