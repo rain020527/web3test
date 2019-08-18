@@ -59,6 +59,7 @@
 		/* Just for presentation */
 		display: block;
 		float: left;
+		margin: auto;
 	}
 
 	button:active {
