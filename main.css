@@ -76,6 +76,7 @@
 		border-right: 20px solid #187dbc;
 		position: relative;
 		opacity: 0.6;
-		float: left;
+		right: 0;
+		top: 0;
 		border-radius: 0 5px 5px 0;
 	}
