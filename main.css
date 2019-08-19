@@ -8,7 +8,7 @@
 	}
 
 	.container {
-		width: 55%;
+		width: 65%;
 		margin: 0 auto;
 		background:rgba(255, 255, 255, 0.85);
 	}
@@ -20,8 +20,7 @@
 		border-radius: 42px;
 		border: 2px solid #324B4E;
 		background: #F9F0DA;
-		transition: .3s linear;
-		float: left;
+		transition: .3s linear;		
 		margin: auto;
 	}
 
@@ -57,12 +56,12 @@
 		/* Just for presentation */
 		display: block;
 		float: left;
-		margin: auto;
+		margin: 11px;
 	}
 
 	button:active {
 		box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, .2);
-		top: 1px;
+		top: 3px;
 	}
 
 	button:after {
