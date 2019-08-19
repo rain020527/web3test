@@ -26,8 +26,7 @@
 	}
 
 	output {
-		width: 300px;
-		background-color: rgb(255, 255, 255);
+		width: 400px;
 		margin: auto;
 		position: absolute;
 	}
