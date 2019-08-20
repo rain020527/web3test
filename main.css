@@ -30,8 +30,8 @@
 
 	output {
 		width: 400px;
-		margin: auto;
-		position: absolute;
+		margin: 15px;
+		position: relative;
 		font-size: 20px;
 		float: left;
 	}
