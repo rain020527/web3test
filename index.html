@@ -312,7 +312,10 @@
 			
 			$("a.push_button.red").click(function(){
 				console.log('ya');
-				window.alert('abc');				
+				window.alert('1. Delegate(address a) : 將票權轉讓給位址為a的帳戶\n2. Give Right To Vote(address b) : (只能由chairperson使用)給予b帳戶投票的權利\n3.Vote(uint z) : 對編號為z的提案投票\n
+				4. Chairperson : 顯示投票發起人的位址\n5. Proposals(uint x) : 會顯示第x個提案的名字及票數\n6. Voter(Address x) : 顯示x位址帳戶的投票情形(Weight,Voted,Delegate,Vote)\n	(Weight為權重，代表投票後會讓候選目標增加的值)\n	(Voted為True代表已投完票或已轉讓票)\n	(Delegate 為轉讓給那個位址的帳戶，若為0則為未轉讓票權)\n
+				(Vote 為所投的提案)\n7. Winner name : 顯示最高票的提案名稱(byte32[]形式)\n'
+				);				
 			});
 
 	    </script>
