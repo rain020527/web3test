@@ -58,6 +58,8 @@
 			<hr class="style-one"><br> <!--分隔線-->
 
             <img src="sa.png" width="384" height="216">
+			<a class="push_button red" href="https://www.youtube.com/">Take The Red Pill</a> 
+			<a class="push_button blue" id="blue">Take The Blue Pill</a>
 	    </div>
 	
 	    
@@ -306,7 +308,11 @@
 				});
 							
 			})
-	
+			
+			$("#blue").click(function(){
+				swal("这是一个信息提示框!");
+			});
+
 	    </script>
 	
 	</body>
