@@ -101,8 +101,9 @@
         <!--<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.2.1/dist/web3.min.js"></script>-->  
 	    <script src="./web3.js/dist/web3.min.js"></script>
 	
-	    <script>       
-	       if (typeof web3 !== 'undefined') {
+	    <script>
+			var content = window.opener.document.getElementById("address").value;       
+	        if (typeof web3 !== 'undefined') {
 	            web3 = new Web3(web3.currentProvider);
 	        }
 	
