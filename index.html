@@ -26,7 +26,8 @@
 
 
         $('#deploy').click(function() {
-            var proposalNames = [] /* var of type bytes32[] here */ ;
+            var proposalNames = document.getElementById('input2').value /* var of type bytes32[] here */ ;
+            console.log(proposalNames);
             var ballotContract = web3.eth.contract([{
                 "constant": false,
                 "inputs": [{
