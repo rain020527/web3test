@@ -13,6 +13,8 @@
     <input id="address" type="text">
     <button id="open">打开新的页面</button>
 
+    <input id="input2" type="text">
+    <button id="deploy">部屬</button>
     <script>
         if (typeof web3 !== 'undefined') {
             web3 = new Web3(web3.currentProvider);
@@ -22,7 +24,7 @@
         web3.eth.defaultAccount = web3.eth.accounts[0];
 
 
-        $('#open').click(function() {
+        $('#deploy').click(function() {
             var proposalNames = [] /* var of type bytes32[] here */ ;
             var ballotContract = web3.eth.contract([{
                 "constant": false,
@@ -140,10 +142,10 @@
                         console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
                     }
                 })
-
-            window.open('./voting-page.html')
-
         })
+        $('#open').click(function() {
+                    window.open('./voting-page.html');
+                }
     </script>
 
 
