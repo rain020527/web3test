@@ -15,7 +15,7 @@
     <button id="open">打開投票頁面</button><br><br>
 
     <input id="input2"><br>
-    <button id="deploy" type="text">部屬</button>
+    <button id="deploy" type="text">部屬b</button>
     <script>
         if (typeof web3 !== 'undefined') {
             web3 = new Web3(web3.currentProvider);
@@ -29,8 +29,9 @@
             if (document.getElementById('input2').value != "") {
                 var contract_input = document.getElementById('input2').value.split(",") /* var of type bytes32[] here */ ;
                 for (var i = 0; i < contract_input.length; i++) {
-                    console.log("aaaa + " + web3.padRight(web3.fromAscii(contract_input[i]), 64));
-                    //Do something  
+                    console.log("aaaa + " + web3.padRight(web3.fromUtf8(contract_input[i]), 64));
+                    contract_input[i] = web3.padRight(web3.fromUtf8(contract_input[i]), 64)
+                        //Do something  
                 }
                 console.log(contract_input);
                 console.log(typeof(contract_input));
