@@ -306,7 +306,7 @@
             Coursetro.winnerName(function(error, result) {
                 if (!error) {
                     console.log(result);
-                    document.getElementById('winnerName output').value = result;
+                    document.getElementById('winnerName output').value = web3.toUtf8(result);
                 } else console.error(error);
             });
 
