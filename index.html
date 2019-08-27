@@ -24,8 +24,9 @@
         // Previous if/else statement removed for brevity
         web3.eth.defaultAccount = web3.eth.accounts[0];
 
-        if (document.getElementById('input2').value != "") {
-            $('#deploy').click(function() {
+
+        $('#deploy').click(function() {
+            if (document.getElementById('input2').value != "") {
                 var proposalNames = document.getElementById('input2').value.split(",") /* var of type bytes32[] here */ ;
                 console.log(proposalNames);
                 console.log(typeof(proposalNames));
@@ -145,8 +146,9 @@
                             console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
                         }
                     })
-            })
-        }
+            }
+        })
+
         $('#open').click(function() {
             window.open('./voting-page.html');
         })
