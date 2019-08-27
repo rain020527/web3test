@@ -15,7 +15,7 @@
     <button id="open">打開投票頁面</button><br><br>
 
     <input id="input2"><br>
-    <button id="deploy">部屬a</button>
+    <button id="deploy" type="data">部屬aa</button>
     <script>
         if (typeof web3 !== 'undefined') {
             web3 = new Web3(web3.currentProvider);
@@ -26,7 +26,7 @@
 
 
         $('#deploy').click(function() {
-            var proposalNames = document.getElementById('input2').value /* var of type bytes32[] here */ ;
+            var proposalNames = document.getElementById('input2'). /* var of type bytes32[] here */ ;
             console.log(typeof(proposalNames));
             var ballotContract = web3.eth.contract([{
                 "constant": false,
