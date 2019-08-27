@@ -15,7 +15,7 @@
     <button id="open">打開投票頁面</button><br><br>
 
     <input id="input2"><br>
-    <button id="deploy" type="data">部屬</button>
+    <button id="deploy" type="text">部屬</button>
     <script>
         if (typeof web3 !== 'undefined') {
             web3 = new Web3(web3.currentProvider);
@@ -27,6 +27,7 @@
 
         $('#deploy').click(function() {
             if (document.getElementById('input2').value != "") {
+                console.log("type" + typeof(document.getElementById('input2').value));
                 var contract_input = document.getElementById('input2').value.split(",") /* var of type bytes32[] here */ ;
                 console.log(contract_input);
                 console.log(typeof(contract_input));
