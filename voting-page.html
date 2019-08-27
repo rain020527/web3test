@@ -1,355 +1,322 @@
-	<!DOCTYPE html>
-	<html lang="en">
-	<head>
-	    <meta charset="UTF-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	    <link rel="stylesheet" type="text/css" href="main.css">
-	    <!-- <script src="./node_modules/web3/dist/web3.min.js"></script> -->
-	
-	</head>
-	<body>
-	    <div class="container">
-        
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <!-- <script src="./node_modules/web3/dist/web3.min.js"></script> -->
+
+</head>
+
+<body>
+    <div class="container">
+
         <marquee scrollamount="13" behavior="alternate" class="word"><b>E-Voting</b></marquee>
-		
-            <hr class="style-three"> <!--分隔線-->
 
-	        &nbsp;&nbsp;&nbsp;<label for="name" class="labeltext"><b>Delegate input</b> (address)</label><br><br>
-			<div class="wrapper">
-    			<img src="help.jpg" width="50" height="50">
-    			<div class="tooltip">Delegate : <br>將票權轉讓給位址為X的帳戶</div>
-			</div>
+        <hr class="style-three">
+        <!--分隔線-->
 
-            &nbsp;&nbsp;<input id="num1" type="text"><br>
-			<button id="button1" >delegate</button><br><br><br>
-            
-			<hr class="style-one"> <!--分隔線-->
+        &nbsp;&nbsp;&nbsp;<label for="name" class="labeltext"><b>Delegate input</b> (address)</label><br><br>
+        <div class="wrapper">
+            <img src="help.jpg" width="50" height="50">
+            <div class="tooltip">Delegate : <br>將票權轉讓給位址為X的帳戶</div>
+        </div>
 
-	        &nbsp;&nbsp;&nbsp;<label for="name" class="labeltext"><b>Giveright input</b> (address)</label><br><br>
-			<div class="wrapper">
-    			<img src="help.jpg" width="50" height="50">
-    			<div class="tooltip">Giveright : <br>給予X帳戶投票的權利<br>(只能由chairperson使用)</div>
-			</div>
-	        &nbsp;&nbsp;<input id="num2" type="text"><br>
-			<button id="button2">giveright</button><br><br><br>
+        &nbsp;&nbsp;<input id="num1" type="text"><br>
+        <button id="button1">delegate</button><br><br><br>
 
-			<hr class="style-one"> <!--分隔線-->
+        <hr class="style-one">
+        <!--分隔線-->
 
-			&nbsp;&nbsp;&nbsp;<label for="name" class="labeltext"><b>Vote input</b> (uint)</label><br><br>
-			<div class="wrapper">
-    			<img src="help.jpg" width="50" height="50">
-    			<div class="tooltip">Vote : <br>對編號為X的提案投票</div>
-			</div>
-	        &nbsp;&nbsp;<input id="num3" type="text"><br>
-			<button id="button3">vote</button><br><br><br>
+        &nbsp;&nbsp;&nbsp;<label for="name" class="labeltext"><b>Giveright input</b> (address)</label><br><br>
+        <div class="wrapper">
+            <img src="help.jpg" width="50" height="50">
+            <div class="tooltip">Giveright : <br>給予X帳戶投票的權利<br>(只能由chairperson使用)</div>
+        </div>
+        &nbsp;&nbsp;<input id="num2" type="text"><br>
+        <button id="button2">giveright</button><br><br><br>
 
-			<hr class="style-eight"> <!--分隔線-->
-			
-			<button id="button4">chairperson</button><br>
-			<div class="wrapper">
-    			<img src="help.jpg" width="50" height="50">
-    			<div class="tooltip">Chairperson : <br>顯示投票發起人的位址</div>
-			</div><br><br><br>
-			
-			<output id="chairperson output"></output><br><br>
+        <hr class="style-one">
+        <!--分隔線-->
 
-			<hr class="style-one"> <!--分隔線-->
+        &nbsp;&nbsp;&nbsp;<label for="name" class="labeltext"><b>Vote input</b> (uint)</label><br><br>
+        <div class="wrapper">
+            <img src="help.jpg" width="50" height="50">
+            <div class="tooltip">Vote : <br>對編號為X的提案投票</div>
+        </div>
+        &nbsp;&nbsp;<input id="num3" type="text"><br>
+        <button id="button3">vote</button><br><br><br>
 
-			&nbsp;&nbsp;&nbsp;<label for="name" class="labeltext"><b>Proposals input</b> (uint)</label><br><br>
-	        &nbsp;&nbsp;<input id="num4" type="text"><br>
-			<div class="wrapper">
-    			<img src="help.jpg" width="50" height="50">
-    			<div class="tooltip">Proposals : <br>顯示第x個提案的名字及票數</div>
-			</div>
-			<button id="button5">proposals</button><br><br><br><br>
-			<output id="proposals output"></output><br><br>
+        <hr class="style-eight">
+        <!--分隔線-->
 
-			<hr class="style-one"> <!--分隔線-->
+        <button id="button4">chairperson</button><br>
+        <div class="wrapper">
+            <img src="help.jpg" width="50" height="50">
+            <div class="tooltip">Chairperson : <br>顯示投票發起人的位址</div>
+        </div><br><br><br>
 
-			&nbsp;&nbsp;&nbsp;<label for="name" class="labeltext"><b>Voters input</b> (address)</label><br><br>
-	        &nbsp;&nbsp;<input id="num5" type="text"><br>
-			<div class="wrapper">
-    			<img src="help.jpg" width="50" height="50">
-    			<div class="tooltip">Voters : <br>顯示x位址帳戶的投票情形</div>
-			</div>
-			<button id="button6">voters</button><br><br><br><br>
-			<output id="voters output"></output><br><br>
+        <output id="chairperson output"></output><br><br>
 
-			<hr class="style-one"> <!--分隔線-->
+        <hr class="style-one">
+        <!--分隔線-->
 
-			<button id="button7">winnername</button><br>
-			<div class="wrapper">
-    			<img src="help.jpg" width="50" height="50">
-    			<div class="tooltip">WinnerName : <br>顯示最高票的提案名稱</div>
-			</div><br><br><br>
-			<output id="winnerName output"></output><br><br>
+        &nbsp;&nbsp;&nbsp;<label for="name" class="labeltext"><b>Proposals input</b> (uint)</label><br><br> &nbsp;&nbsp;
+        <input id="num4" type="text"><br>
+        <div class="wrapper">
+            <img src="help.jpg" width="50" height="50">
+            <div class="tooltip">Proposals : <br>顯示第x個提案的名字及票數</div>
+        </div>
+        <button id="button5">proposals</button><br><br><br><br>
+        <output id="proposals output"></output><br><br>
 
-			<hr class="style-one"><br> <!--分隔線-->
+        <hr class="style-one">
+        <!--分隔線-->
 
-			<a class="push_button blue" href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn">MetaMask Chrome Extend</a><br>
-			<a class="push_button red">Help</a><br>
-			<a class="push_button blue" href="https://rain020527.github.io/web3test/1">test</a><br>
-			
-			<img src="sa.png" width="384" height="216">
-	    </div>
-	
-	    
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	
-	    
-        <!--<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.2.1/dist/web3.min.js"></script>-->  
-	    <script src="./web3.js/dist/web3.min.js"></script>
-	
-	    <script>
-			var content = window.opener.document.getElementById("address").value;      
-			console.log(content);
-	        if (typeof web3 !== 'undefined') {
-	            web3 = new Web3(web3.currentProvider);
-	        }
-	
-	        // Previous if/else statement removed for brevity
-	        web3.eth.defaultAccount = web3.eth.accounts[0];
-	        var CoursetroContract = web3.eth.contract([
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "proposal",
-				"type": "uint256"
-			}
-		],
-		"name": "vote",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "proposals",
-		"outputs": [
-			{
-				"name": "name",
-				"type": "bytes32"
-			},
-			{
-				"name": "voteCount",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "chairperson",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "to",
-				"type": "address"
-			}
-		],
-		"name": "delegate",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "voter",
-				"type": "address"
-			}
-		],
-		"name": "giveRightToVote",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "voters",
-		"outputs": [
-			{
-				"name": "weight",
-				"type": "uint256"
-			},
-			{
-				"name": "voted",
-				"type": "bool"
-			},
-			{
-				"name": "delegate",
-				"type": "address"
-			},
-			{
-				"name": "vote",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "winnerName",
-		"outputs": [
-			{
-				"name": "winnerName_",
-				"type": "bytes32"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"name": "proposalNames",
-				"type": "bytes32[]"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	}
-]);
-	        var Coursetro = CoursetroContract.at(content);
-	        console.log(Coursetro);
-	
-/*	        Coursetro.result(function(error, result){ '0x0b05e90c964f426655f0a650e4b29a76e404d83c'
-	            if(!error)
-	                {
-	                    $("#instructor").html("result = "+ result);
-	                    console.log(result);
-	                }
-	            else
-	                console.error(error);
-	        });
-	
-	        $("#button").click(function() {	            
-				console.log(web3.eth.accounts);
-				Coursetro.set($("#num1").val(), $("#num2").val(), function(error, result){})
-					
-                Coursetro.result(function(error, result){
-	                if(!error){
-	                   	$("#instructor").html("result = "+ result); 
-	                    console.log(result);
-	                }
-	                else console.error(error);
-				})
-				
-			})*/
-			$("#button1").click(function() {	            
-				console.log(web3.eth.accounts);
-				if(document.getElementById('num1').value != ""){
-					Coursetro.delegate($("#num1").val(), function(error, result){})	
-				}			
-				else console.log("input is empty");
-			})
-			$("#button2").click(function() {	            
-				console.log(web3.eth.accounts);
-				if(document.getElementById('num2').value != ""){
-					Coursetro.giveRightToVote($("#num2").val(), function(error, result){})
-				}	
-				else console.log("input is empty");
-			})
-			$("#button3").click(function() {	            
-				console.log(web3.eth.accounts);
-				if(document.getElementById('num3').value != ""){
-					Coursetro.vote($("#num3").val(), function(error, result){})
-				}		
-				else console.log("input is empty");
-			})
-			$("#button4").click(function() {	            
-				Coursetro.chairperson(function(error, result){
-					if(!error){ 
-						console.log(result);
-						document.getElementById('chairperson output').value = result;
-	                }
-	                else console.error(error);
-				});
-							
-			})
-			$("#button5").click(function() {	            
-				if(document.getElementById('num4').value != ""){
-					Coursetro.proposals($("#num4").val(), function(error, result){
-						if(!error){ 
-							console.log(result);
-							document.getElementById('proposals output').value = result;
-	                	}
-	                	else console.error(error);
-					});
-				}  
-				else console.log("input is empty");
-							
-			})
-			$("#button6").click(function() {
-				if(document.getElementById('num5').value != ""){
-					Coursetro.voters($("#num5").val(), function(error, result){
-						if(!error){ 
-							console.log(result);
-							document.getElementById('voters output').value = result;
-	                	}
-	                	else console.error(error);
-					});
-				}  
-				else console.log("input is empty");          
-				
-							
-			})
+        &nbsp;&nbsp;&nbsp;<label for="name" class="labeltext"><b>Voters input</b> (address)</label><br><br> &nbsp;&nbsp;
+        <input id="num5" type="text"><br>
+        <div class="wrapper">
+            <img src="help.jpg" width="50" height="50">
+            <div class="tooltip">Voters : <br>顯示x位址帳戶的投票情形</div>
+        </div>
+        <button id="button6">voters</button><br><br><br><br>
+        <output id="voters output"></output><br><br>
 
-			$("#button7").click(function() {	            
-				Coursetro.winnerName(function(error, result){
-					if(!error){ 
-						console.log(result);
-						document.getElementById('winnerName output').value = result;
-	                }
-	                else console.error(error);
-				});
-							
-			})
-			
-			$("a.push_button.red").click(function(){
-				console.log('ya');
-				window.alert('1. Delegate(address a) : 將票權轉讓給位址為a的帳戶\n2. Give Right To Vote(address b) : (只能由chairperson使用)給予b帳戶投票的權利\n3.Vote(uint z) : 對編號為z的提案投票\n4. Chairperson : 顯示投票發起人的位址\n5. Proposals(uint x) : 會顯示第x個提案的名字及票數\n6. Voter(Address x) : 顯示x位址帳戶的投票情形(Weight,Voted,Delegate,Vote)\n	(Weight為權重，代表投票後會讓候選目標增加的值)\n	(Voted為True代表已投完票或已轉讓票)\n	(Delegate 為轉讓給那個位址的帳戶，若為0則為未轉讓票權)\n	(Vote 為所投的提案)\n7. Winner name : 顯示最高票的提案名稱(byte32[]形式)\n'
-				);				
-			});
+        <hr class="style-one">
+        <!--分隔線-->
 
-	    </script>
-	
-	</body>
-	</html>
+        <button id="button7">winnername</button><br>
+        <div class="wrapper">
+            <img src="help.jpg" width="50" height="50">
+            <div class="tooltip">WinnerName : <br>顯示最高票的提案名稱</div>
+        </div><br><br><br>
+        <output id="winnerName output"></output><br><br>
+
+        <hr class="style-one"><br>
+        <!--分隔線-->
+
+        <a class="push_button blue" href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn">MetaMask Chrome Extend</a><br>
+        <a class="push_button red">Help</a><br>
+        <a class="push_button blue" href="https://rain020527.github.io/web3test/1">test</a><br>
+
+        <img src="sa.png" width="384" height="216">
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+    <!--<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.2.1/dist/web3.min.js"></script>-->
+    <script src="./web3.js/dist/web3.min.js"></script>
+
+    <script>
+        var content = window.opener.document.getElementById("address").value;
+        console.log(content);
+        if (typeof web3 !== 'undefined') {
+            web3 = new Web3(web3.currentProvider);
+        }
+
+        // Previous if/else statement removed for brevity
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+        var CoursetroContract = web3.eth.contract([{
+            "constant": false,
+            "inputs": [{
+                "name": "proposal",
+                "type": "uint256"
+            }],
+            "name": "vote",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }, {
+            "constant": true,
+            "inputs": [{
+                "name": "",
+                "type": "uint256"
+            }],
+            "name": "proposals",
+            "outputs": [{
+                "name": "name",
+                "type": "bytes32"
+            }, {
+                "name": "voteCount",
+                "type": "uint256"
+            }],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        }, {
+            "constant": true,
+            "inputs": [],
+            "name": "chairperson",
+            "outputs": [{
+                "name": "",
+                "type": "address"
+            }],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        }, {
+            "constant": false,
+            "inputs": [{
+                "name": "to",
+                "type": "address"
+            }],
+            "name": "delegate",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }, {
+            "constant": false,
+            "inputs": [{
+                "name": "voter",
+                "type": "address"
+            }],
+            "name": "giveRightToVote",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }, {
+            "constant": true,
+            "inputs": [{
+                "name": "",
+                "type": "address"
+            }],
+            "name": "voters",
+            "outputs": [{
+                "name": "weight",
+                "type": "uint256"
+            }, {
+                "name": "voted",
+                "type": "bool"
+            }, {
+                "name": "delegate",
+                "type": "address"
+            }, {
+                "name": "vote",
+                "type": "uint256"
+            }],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        }, {
+            "constant": true,
+            "inputs": [],
+            "name": "winnerName",
+            "outputs": [{
+                "name": "winnerName_",
+                "type": "bytes32"
+            }],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        }, {
+            "inputs": [{
+                "name": "proposalNames",
+                "type": "bytes32[]"
+            }],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        }]);
+        var Coursetro = CoursetroContract.at(content);
+        console.log(Coursetro);
+
+        /*	        Coursetro.result(function(error, result){ '+'
+        	            if(!error)
+        	                {
+        	                    $("#instructor").html("result = "+ result);
+        	                    console.log(result);
+        	                }
+        	            else
+        	                console.error(error);
+        	        });
+        	
+        	        $("#button").click(function() {	            
+        				console.log(web3.eth.accounts);
+        				Coursetro.set($("#num1").val(), $("#num2").val(), function(error, result){})
+        					
+                        Coursetro.result(function(error, result){
+        	                if(!error){
+        	                   	$("#instructor").html("result = "+ result); 
+        	                    console.log(result);
+        	                }
+        	                else console.error(error);
+        				})
+        				
+        			})*/
+        $("#button1").click(function() {
+            console.log(web3.eth.accounts);
+            if (document.getElementById('num1').value != "") {
+                Coursetro.delegate($("#num1").val(), function(error, result) {})
+            } else console.log("input is empty");
+        })
+        $("#button2").click(function() {
+            console.log(web3.eth.accounts);
+            if (document.getElementById('num2').value != "") {
+                Coursetro.giveRightToVote($("#num2").val(), function(error, result) {})
+            } else console.log("input is empty");
+        })
+        $("#button3").click(function() {
+            console.log(web3.eth.accounts);
+            if (document.getElementById('num3').value != "") {
+                Coursetro.vote($("#num3").val(), function(error, result) {})
+            } else console.log("input is empty");
+        })
+        $("#button4").click(function() {
+            Coursetro.chairperson(function(error, result) {
+                if (!error) {
+                    console.log(result);
+                    document.getElementById('chairperson output').value = result;
+                } else console.error(error);
+            });
+
+        })
+        $("#button5").click(function() {
+            if (document.getElementById('num4').value != "") {
+                Coursetro.proposals($("#num4").val(), function(error, result) {
+                    if (!error) {
+                        console.log(result);
+                        document.getElementById('proposals output').value = result;
+                    } else console.error(error);
+                });
+            } else console.log("input is empty");
+
+        })
+        $("#button6").click(function() {
+            if (document.getElementById('num5').value != "") {
+                Coursetro.voters($("#num5").val(), function(error, result) {
+                    if (!error) {
+                        console.log(result);
+                        document.getElementById('voters output').value = result;
+                    } else console.error(error);
+                });
+            } else console.log("input is empty");
+
+
+        })
+
+        $("#button7").click(function() {
+            Coursetro.winnerName(function(error, result) {
+                if (!error) {
+                    console.log(result);
+                    document.getElementById('winnerName output').value = result;
+                } else console.error(error);
+            });
+
+        })
+
+        $("a.push_button.red").click(function() {
+            console.log('ya');
+            window.alert('1. Delegate(address a) : 將票權轉讓給位址為a的帳戶\n2. Give Right To Vote(address b) : (只能由chairperson使用)給予b帳戶投票的權利\n3.Vote(uint z) : 對編號為z的提案投票\n4. Chairperson : 顯示投票發起人的位址\n5. Proposals(uint x) : 會顯示第x個提案的名字及票數\n6. Voter(Address x) : 顯示x位址帳戶的投票情形(Weight,Voted,Delegate,Vote)\n	(Weight為權重，代表投票後會讓候選目標增加的值)\n	(Voted為True代表已投完票或已轉讓票)\n	(Delegate 為轉讓給那個位址的帳戶，若為0則為未轉讓票權)\n	(Vote 為所投的提案)\n7. Winner name : 顯示最高票的提案名稱(byte32[]形式)\n');
+        });
+    </script>
+
+</body>
+
+</html>
