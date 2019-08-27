@@ -283,7 +283,7 @@
                 Coursetro.proposals($("#num4").val(), function(error, result) {
                     if (!error) {
                         console.log(result);
-                        document.getElementById('proposals output').value = web3.toUtf8(result);
+                        document.getElementById('proposals output').value = web3.toUtf8(result.split(",")[0]);
                     } else console.error(error);
                 });
             } else console.log("input is empty");
