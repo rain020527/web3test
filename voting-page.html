@@ -99,7 +99,7 @@
 
         <a class="push_button blue" href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn">MetaMask Chrome Extend</a><br>
         <a class="push_button red">Help</a><br>
-        <a class="push_button blue" href="https://rain020527.github.io/web3test/1">test</a><br>
+        <output id="contract_address">
 
         <img src="sa.png" width="384" height="216">
     </div>
@@ -225,8 +225,9 @@
             "type": "constructor"
         }]);
         var Coursetro = CoursetroContract.at(content);
+        contract_address
         console.log(Coursetro);
-
+        document.getElementById('contract_address').value = content;
         /*	        Coursetro.result(function(error, result){ '+'
         	            if(!error)
         	                {
