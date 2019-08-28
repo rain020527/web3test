@@ -4,18 +4,24 @@
 <head>
     <meta charset="utf-8">
     <title>My test page1</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
 <body>
     <script src="./web3.js/dist/web3.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-    輸入address<br>
-    <input id="address" type="text"><br>
-    <button id="open">打開投票頁面</button><br><br>
+    <div class="container">
+        &nbsp;&nbsp;輸入address<br><br>&nbsp;&nbsp;
+        <input id="address" type="text"><br>
+        <button id="open">打開投票頁面</button><br><br><br>
 
-    <input id="input2"><br>
-    <button id="deploy" type="text">部屬</button>
+        <hr class="style-one"> <br>&nbsp;&nbsp;
+
+        <input id="input2"><br>
+        <button id="deploy" type="text">部屬</button><br><br><br>
+    </div>
+
     <script>
         if (typeof web3 !== 'undefined') {
             web3 = new Web3(web3.currentProvider);
