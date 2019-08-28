@@ -10,16 +10,23 @@
 <body>
     <script src="./web3.js/dist/web3.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-    <div class="container">
-        &nbsp;&nbsp;輸入address<br><br>&nbsp;&nbsp;
-        <input id="address" type="text"><br>
-        <button id="open">打開投票頁面</button><br><br><br>
-
-        <hr class="style-one"> <br>&nbsp;&nbsp;
-
-        <input id="input2"><br>
-        <button id="deploy" type="text">部屬</button><br><br><br>
+    <div id="Header">E-Voting 電子投票</div>
+    <div id="right">
+        right
+    </div>
+    <div id="left">
+        <div class="highlight">
+            &nbsp;&nbsp;
+            <font size="16">輸入投票人名稱(中間用半形逗號隔開)</font><br>
+            <br>
+            <input id="input2"><br><br>
+            <button class="button" id="open">部屬</button>
+            <hr size="3px" align="center" width="100%" color="black"><br> &nbsp;&nbsp;
+            <font size="16">輸入address</font><br>
+            <br>
+            <input id="address" type="text"><br><br>
+            <button class="button" id="open">打開投票頁面</button>
+        </div>
     </div>
 
     <script>
