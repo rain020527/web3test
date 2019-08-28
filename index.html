@@ -12,7 +12,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <div id="Header">E-Voting 電子投票</div>
     <div id="left">
-        <output id="deploy_address">0x000000000000000000000000000000000000000000000000000000000000000A</output>
+        <output>0x000000000000000000000000000000000000000000000000000000000000000A</output>
+        <p id="deploy_address">ya</p>
     </div>
     <div id="right">
         <div class="highlight">
@@ -170,7 +171,9 @@
         })
 
         $('#open').click(function() {
+            document.getElementById('deploy_address').value = 'kkkkk';
             window.open('./voting-page.html');
+
         })
     </script>
 
