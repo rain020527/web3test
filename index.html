@@ -12,7 +12,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <div id="Header">E-Voting 電子投票</div>
     <div id="left">
-        <output>0x000000000000000000000000000000000000000000000000000000000000000A</output>
         <p id="deploy_address">ya</p>
     </div>
     <div id="right">
@@ -23,7 +22,7 @@
             <input id="input2"><br><br>
             <button class="button" id="deploy">部屬</button>
             <hr size="3px" align="center" width="100%" color="black"><br> &nbsp;&nbsp;
-            <font size="16">輸入address</font><br>
+            <font size="16">輸入合約地址</font><br>
             <br>
             <input id="address" type="text"><br><br>
             <button class="button" id="open">打開投票頁面</button>
@@ -172,8 +171,8 @@
 
         $('#open').click(function() {
             document.getElementById('deploy_address').innerHTML = "kkkk";
+            console.log(document.getElementById('deploy_address').innerHTML);
             window.open('./voting-page.html');
-
         })
     </script>
 
