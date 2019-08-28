@@ -283,7 +283,7 @@
                 Coursetro.proposals($("#num4").val(), function(error, result) {
                     if (!error) {
                         console.log(result);
-                        document.getElementById('proposals output').value = "1. 名字 : " + web3.toUtf8(result.toString().split(",")[0]) + " ; 2. 票數 : " + result.toString().split(",")[1];
+                        document.getElementById('proposals output').value = "1. 名字 : " + web3.toUtf8(result.toString().split(",")[0]) + "   2. 票數 : " + result.toString().split(",")[1];
                     } else console.error(error);
                 });
             } else console.log("input is empty");
