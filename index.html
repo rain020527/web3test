@@ -8,18 +8,16 @@
 </head>
 
 <body>
-    <script src="./web3.js/dist/web3.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <div id="Header">E-Voting 電子投票</div>
     <div id="left">
-        <div id="deploy_address">G</div>
+        <div id="deploy_address"></div>
     </div>
     <div id="right">
         <div class="highlight">
             &nbsp;&nbsp;
             <font size="16">輸入投票人名稱(中間用半形逗號隔開)</font><br>
             <br>
-            <input id="input2"><br><br>
+            <input id="input2" type="text"><br><br>
             <button class="button" id="deploy">部屬</button>
             <hr size="3px" align="center" width="100%" color="black"><br> &nbsp;&nbsp;
             <font size="16">輸入合約地址</font><br>
@@ -29,6 +27,36 @@
         </div>
     </div>
 
+    <script src="./web3.js/dist/web3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script>
+        window.addEventListener('load', async() => {
+            // Modern dapp browsers...
+            if (window.ethereum) {
+                window.web3 = new Web3(ethereum);
+                try {
+                    // Request account access if needed
+                    await ethereum.enable();
+                    // Acccounts now exposed
+                    web3.eth.sendTransaction({ /* ... */ });
+                } catch (error) {
+                    // User denied account access...
+                }
+            }
+            // Legacy dapp browsers...
+            else if (window.web3) {
+                window.web3 = new Web3(web3.currentProvider);
+                // Acccounts always exposed
+                web3.eth.sendTransaction({ /* ... */ });
+            }
+            // Non-dapp browsers...
+            else {
+                console.log('Non - Ethereum browser detected.You should consider trying MetaMask!');
+            }
+        });
+    </script>
+
     <script>
         if (typeof web3 !== 'undefined') {
             web3 = new Web3(web3.currentProvider);
@@ -36,7 +64,6 @@
 
         // Previous if/else statement removed for brevity
         web3.eth.defaultAccount = web3.eth.accounts[0];
-
 
         $('#deploy').click(function() {
             if (document.getElementById('input2').value != "") {
