@@ -10,7 +10,7 @@
 <body>
     <div id="Header">E-Voting 電子投票</div>
     <div id="left">
-        <div id="deploy_address">aa</div>
+        <div id="deploy_address">ya</div>
     </div>
     <div id="right">
         <div class="highlight">
@@ -36,7 +36,7 @@
 
         // Previous if/else statement removed for brevity
         web3.eth.defaultAccount = web3.eth.accounts[0];
-        console.log(web3.eth.defaultAccount);
+        console.log(web3.eth.accounts[0]);
 
         $('#deploy').click(function() {
             if (document.getElementById('input2').value != "") {
