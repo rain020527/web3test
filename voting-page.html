@@ -84,7 +84,10 @@
             <div class="tooltip">Voters : <br>顯示x位址帳戶的投票情形</div>
         </div>
         <button id="button6">voters</button><br><br><br><br>
-        <output id="voters output"></output><br><br>
+        <output id="voters output"></output><br>
+        <output id="voters output2"></output><br>
+        <output id="voters output3"></output><br>
+        <output id="voters output4"></output><br>
 
         <hr class="style-one">
         <!--分隔線-->
@@ -302,7 +305,15 @@
                 Coursetro.voters($("#num5").val(), function (error, result) {
                     if (!error) {
                         console.log(result);
-                        document.getElementById('voters output').value = result;
+                        document.getElementById('voters output').value = "票的權重 : " + result.toString().split(',')[0];
+                        document.getElementById('voters output2').value = "已投完票或已轉讓票 : " + result.toString().split(',')[1];
+                        if(result.toString().split(',')[2] == "0x0000000000000000000000000000000000000000"){
+                            document.getElementById('voters output3').value = "沒有轉讓票權";
+                        }else{
+                            document.getElementById('voters output3').value = "轉讓的帳戶地址 : " + result.toString().split(',')[2];
+                        }
+                        document.getElementById('voters output4').value = "此人投的提案編號 : " + result.toString().split(',')[3];
+                        
                     } else console.error(error);
                 });
             } else console.log("input is empty");

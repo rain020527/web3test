@@ -14,6 +14,8 @@
 	}
 	
 	input {
+	    font-size: 20px;
+	    padding-inline-start: 15px;
 	    width: 250px;
 	    height: 30px;
 	    border-radius: 42px;
@@ -24,7 +26,7 @@
 	}
 	
 	input:focus {
-	    width: 300px;
+	    width: 50%;
 	}
 	
 	output {
