@@ -11,7 +11,7 @@
 <body>
     <div id="Header">E-Voting 電子投票</div>
     <div id="left">
-        <div id="deploy_address">ya</div>
+        <div id="deploy_address"></div>
     </div>
     <div id="right">
         <div class="highlight">
@@ -40,7 +40,7 @@
                     // Request account access if needed
                     await ethereum.enable();
                     // Acccounts now exposed
-
+                    web3.eth.sendTransaction({ /* ... */ });
                 } catch (error) {
                     // User denied account access...
                 }
@@ -49,7 +49,7 @@
             else if (window.web3) {
                 window.web3 = new Web3(web3.currentProvider);
                 // Acccounts always exposed
-
+                web3.eth.sendTransaction({ /* ... */ });
             }
             // Non-dapp browsers...
             else {
