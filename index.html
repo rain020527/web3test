@@ -12,6 +12,7 @@
     <div id="Header">E-Voting 電子投票</div>
     <div id="left">
         <div id="deploy_address">no contract</div>
+        <textarea id="content" type="text"></textarea>
     </div>
     <div id="right">
         <div class="highlight">
@@ -25,6 +26,11 @@
             <br>
             <input id="address" type="text"><br><br>
             <button class="button" id="open">打開投票頁面</button>
+            <hr size="3px" align="center" width="100%" color="black"><br> &nbsp;&nbsp;
+            <font size="16">輸入留言</font><br>
+            <br>
+            <input id="message" type="text"><br><br>
+            <button class="button" id="message_btn">留言</button>
         </div>
     </div>
 
@@ -183,14 +189,19 @@
                         console.log(e, contract);
                         if (typeof contract.address !== 'undefined') {
                             console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
+                            document.getElementById('deploy_address').innerHTML = contract.address + "\n";
                         }
-                        document.getElementById('deploy_address').innerHTML = contract.address + "\n";
+
                     })
             }
         })
 
         $('#open').click(function() {
             window.open('./voting-page.html');
+        })
+
+        $('#message_btn').click(function() {
+            document.getElementById('content').append(document.getElementById('message').value);
         })
     </script>
 
