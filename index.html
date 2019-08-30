@@ -37,7 +37,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <script>
-        document.getElementById('deploy_address').innerHTML = temp;
+        document.getElementById('deploy_address').innerHTML = window.localStorage.getItem("mes");
         window.addEventListener('load', async() => {
             // Modern dapp browsers...
             if (window.ethereum) {
@@ -201,7 +201,7 @@
 
         $('#message_btn').click(function() {
             var temp = "";
-            temp = window.localStorage.getItem("mes") + document.getElementById('message').value;
+            temp = window.localStorage.getItem("mes") + "<br>" + document.getElementById('message').value;
             window.localStorage.setItem("mes", temp);
             document.getElementById('deploy_address').innerHTML = temp;
         })
