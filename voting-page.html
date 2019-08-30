@@ -70,7 +70,8 @@
             <div class="tooltip">Proposals : <br>顯示第x個提案的名字及票數</div>
         </div>
         <button id="button5">proposals</button><br><br><br><br>
-        <output id="proposals output"></output><br><br>
+        <output id="proposals output"></output><br>
+        <output id="proposals output2"></output><br><br>
 
         <hr class="style-one">
         <!--分隔線-->
@@ -283,7 +284,8 @@
                 Coursetro.proposals($("#num4").val(), function(error, result) {
                     if (!error) {
                         console.log(result);
-                        document.getElementById('proposals output').value = "1. 名字 : " + web3.toUtf8(result.toString().split(",")[0]) + "   2. 票數 : " + result.toString().split(",")[1];
+                        document.getElementById('proposals output').value = "名字 : " + web3.toUtf8(result.toString().split(",")[0]);
+                        document.getElementById('proposals output2').value = "票數 : " + result.toString().split(",")[1];
                     } else console.error(error);
                 });
             } else console.log("input is empty");
