@@ -37,6 +37,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <script>
+        document.getElementById('deploy_address').innerHTML = temp;
         window.addEventListener('load', async() => {
             // Modern dapp browsers...
             if (window.ethereum) {
@@ -61,7 +62,6 @@
                 console.log('Non - Ethereum browser detected.You should consider trying MetaMask!');
             }
         });
-
         // Previous if/else statement removed for brevity
         web3.eth.defaultAccount = web3.eth.accounts[0];
 
