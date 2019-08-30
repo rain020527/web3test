@@ -12,7 +12,6 @@
     <div id="Header">E-Voting 電子投票</div>
     <div id="left">
         <div id="deploy_address">no contract</div>
-        <textarea id="content" type="text"></textarea>
     </div>
     <div id="right">
         <div class="highlight">
@@ -201,7 +200,10 @@
         })
 
         $('#message_btn').click(function() {
-            document.getElementById('content').append(document.getElementById('message').value);
+            var temp = "";
+            temp = window.localStorage.getItem("mes") + document.getElementById('message').value;
+            window.localStorage.setItem("mes", temp);
+            document.getElementById('deploy_address').innerHTML = temp;
         })
     </script>
 
