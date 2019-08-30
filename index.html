@@ -11,7 +11,7 @@
 <body>
     <div id="Header">E-Voting 電子投票</div>
     <div id="left">
-        <div id="deploy_address"></div>
+        <div id="deploy_address">no contract deployed</div>
     </div>
     <div id="right">
         <div class="highlight">
@@ -184,6 +184,7 @@
                         if (typeof contract.address !== 'undefined') {
                             console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
                         }
+                        document.getElementById('deploy_address').innerHTML = contract.address + "\n";
                     })
             }
         })
