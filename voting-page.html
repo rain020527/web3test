@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="voting-pagecs.css">
+    <LINK REL="SHORTCUT ICON" HREF="./favico.ico">
     <!-- <script src="./node_modules/web3/dist/web3.min.js"></script> -->
 
 </head>
@@ -313,14 +314,14 @@
             Coursetro.winnerName(function (error, result) {
                 if (!error) {
                     console.log(result);
-                    Coursetro.proposals(result, function (error, result2) {
-                        if (!error) {
+                    Coursetro.proposals(result, function (error2, result2) {
+                        if (!error2) {
                             if (result2.toString.split(",")[1] == "0") {
                                 document.getElementById('winnerName output').value = "還沒開始投票";
                             } else {
                                 document.getElementById('winnerName output').value = web3.toUtf8(result2);
                             }
-                        } else console.error(error);
+                        } else console.error(error2);
                     });
 
                 } else console.error(error);
