@@ -312,8 +312,11 @@
                         }else{
                             document.getElementById('voters output3').value = "轉讓的帳戶地址 : " + result.toString().split(',')[2];
                         }
-                        document.getElementById('voters output4').value = "此人投的提案編號 : " + result.toString().split(',')[3];
-                        
+                        if(result.toString().split(',')[1] == "false"){
+                            document.getElementById('voters output4').value = "未投票";
+                        }else{
+                            document.getElementById('voters output4').value = "此人投的提案編號 : " + result.toString().split(',')[3];
+                        }                       
                     } else console.error(error);
                 });
             } else console.log("input is empty");
