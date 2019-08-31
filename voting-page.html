@@ -308,12 +308,12 @@
                         document.getElementById('voters output').value = "票的權重 : " + result.toString().split(',')[0];
                         document.getElementById('voters output2').value = "已投完票或已轉讓票 : " + result.toString().split(',')[1];
                         if(result.toString().split(',')[2] == "0x0000000000000000000000000000000000000000"){
-                            document.getElementById('voters output3').value = "沒有轉讓票權!!";
+                            document.getElementById('voters output3').value = "未轉讓票權";
                         }else{
                             document.getElementById('voters output3').value = "轉讓的帳戶地址 : " + result.toString().split(',')[2];
                         }
                         if(result.toString().split(',')[1] == "false"){
-                            document.getElementById('voters output4').value = "未投票!!";
+                            document.getElementById('voters output4').value = "未投票";
                         }else{
                             document.getElementById('voters output4').value = "投的提案編號 : " + result.toString().split(',')[3];
                         }                       
