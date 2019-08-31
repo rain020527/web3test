@@ -30,6 +30,7 @@
             <br>
             <input id="message" type="text"><br><br>
             <button class="button" id="message_btn">留言</button>
+            <button class="button" id="clear">清除留言</button>
         </div>
     </div>
 
@@ -204,6 +205,10 @@
             temp = window.localStorage.getItem("mes") + "<br>" + document.getElementById('message').value;
             window.localStorage.setItem("mes", temp);
             document.getElementById('deploy_address').innerHTML = temp;
+        })
+
+        $('#clear').click(function() {
+            window.localStorage.removeItem("mes");
         })
     </script>
 
