@@ -289,12 +289,12 @@
                 Coursetro.proposals($("#num4").val(), function (error, result) {
                     if (!error) {
                         console.log(result);
-                        var proposal_name;
                         if(web3.toUtf8(result.toString().split(",")[0])==""){
-                            proposal_name = "沒有此候選人";
-                        }
-                        document.getElementById('proposals output').value = "名字 : " + proposal_name;
-                        document.getElementById('proposals output2').value = "票數 : " + result.toString().split(",")[1];
+                            document.getElementById('proposals output').value = "沒有此候選人";
+                        }else{
+                            document.getElementById('proposals output').value = "名字 : " + web3.toUtf8(result.toString().split(",")[0]);
+                            document.getElementById('proposals output2').value = "票數 : " + result.toString().split(",")[1];
+                        }                       
                     } else console.error(error);
                 });
             } else console.log("input is empty");
