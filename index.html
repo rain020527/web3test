@@ -210,7 +210,8 @@
         })
 
         $('#clear').click(function() {
-            window.localStorage.removeItem("mes");
+            window.localStorage.setItem("mes", "");
+            document.getElementById('message_text').innerHTML = "";
         })
     </script>
 
