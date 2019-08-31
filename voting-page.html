@@ -331,10 +331,11 @@
                     console.log(result);
                     Coursetro.proposals(result, function (error2, result2) {
                         if (!error2) {
+                            console.log();
                             if (result2.toString().split(",")[1] == "0") {
                                 document.getElementById('winnerName output').value = "還沒開始投票";
                             } else {
-                                document.getElementById('winnerName output').value = web3.toUtf8(result2);
+                                document.getElementById('winnerName output').value = web3.toUtf8(result2.toString().split(",")[0]);
                             }
                         } else console.error(error2);
                     });
