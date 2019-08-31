@@ -291,6 +291,7 @@
                         console.log(result);
                         if(web3.toUtf8(result.toString().split(",")[0])==""){
                             document.getElementById('proposals output').value = "沒有此候選人";
+                            document.getElementById('proposals output2').value = "";
                         }else{
                             document.getElementById('proposals output').value = "名字 : " + web3.toUtf8(result.toString().split(",")[0]);
                             document.getElementById('proposals output2').value = "票數 : " + result.toString().split(",")[1];
