@@ -328,18 +328,7 @@
         $("#button7").click(function () {
             Coursetro.winnerName(function (error, result) {
                 if (!error) {
-                    console.log(result);
-                    Coursetro.proposals(result, function (error2, result2) {
-                        if (!error2) {
-                            console.log(result2.toString());
-                            if (result2.toString().split(",")[1] == "0") {
-                                document.getElementById('winnerName output').value = "還沒開始投票";
-                            } else {
-                                document.getElementById('winnerName output').value = web3.toUtf8(result2.toString().split(",")[0]);
-                            }
-                        } else console.error(error2);
-                    });
-
+                    document.getElementById('winnerName output').value = web3.toUtf8(result.toString());
                 } else console.error(error);
             });
 
