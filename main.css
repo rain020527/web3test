@@ -9,7 +9,7 @@
 	}
 	
 	#left {
-	    height: 90%;
+	    height: 98%;
 	    width: 35%;
 	    float: left;
 	    background-color: rgb(244, 230, 255);
@@ -29,7 +29,7 @@
 	#right {
 	    width: 65%;
 	    float: left;
-	    height: 90%;
+	    height: 98%;
 	    background-color: rgb(238, 252, 200);
 	}
 	
