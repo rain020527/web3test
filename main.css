@@ -107,3 +107,7 @@
 	    left: 210px;
 	    transition: all .7s;
 	}
+	#deploy_address{
+		font-size: 20px;
+		margin-left: 20px;
+	}
