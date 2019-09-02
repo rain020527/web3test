@@ -189,13 +189,13 @@
                     },
                     function(e, contract) {
                         console.log(e, contract);
-                        if (e !== 'undefined') {
-                            if (typeof contract.address !== 'undefined') {
+                        if (e != 'undefined') {
+                            if (typeof contract.address != 'undefined') {
                                 console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
                                 document.getElementById('deploy_address').innerHTML = 'Contract mined! address: ' + contract.address;
                             } else {
                                 console.log('Contract mined! transactionHash: ' + contract.transactionHash);
-                                document.getElementById('deploy_address').innerHTML = 'Contract mined! transactionHash: ' + contract.address;
+                                document.getElementById('deploy_address').innerHTML = 'Contract mined! transactionHash: ' + contract.transactionHash;
                             }
                         }
                     })
